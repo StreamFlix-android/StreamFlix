@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StreamFlix"
+rootProject.name = "FlixStream"
 include(":app")
  
