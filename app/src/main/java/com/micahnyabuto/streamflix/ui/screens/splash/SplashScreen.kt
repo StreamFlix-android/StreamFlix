@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,9 +29,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.micahnyabuto.streamflix.R
+import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    onSplashFinished: () -> Unit
+) {
+    LaunchedEffect(Unit) {
+        delay(1500)
+        onSplashFinished()
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -71,9 +79,4 @@ fun SplashScreen() {
             color = Color.White
         )
     }
-}
-@Preview(showBackground = true)
-@Composable
-fun SplashScreenView(){
-    SplashScreen()
 }
