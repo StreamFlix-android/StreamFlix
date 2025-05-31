@@ -7,6 +7,9 @@ sealed class Destinations {
     object Splash
 
     @Serializable
+    object Onboard
+
+    @Serializable
     object Home
 
     @Serializable
